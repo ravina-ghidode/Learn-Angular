@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-4">
+        one way data binding - from .ts to .html
+    </div>
+    <div class="col-4">
+
+    </div>
+    <div class="col-4">
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-4">
+        one way data binding - from .ts to .html
+    </div>
+    <div class="col-4">
+        Interpolation
+        <div class="col-4">
+            {{courseName}}
+
+            <input type="text" value="{{courseName}}" placeholder="Enter text">
+            <input type="{{inputType}}">
+        </div>
+        <div class="col-4">
+            Property - Binding
+            <div [class]="myClassName">propert</div>
+            <input type="text" [value]="courseName">
+            <input [type]="inputType">
+        </div>
+        <button class="btn btn-success" (click)="showAlert('welcome to angular 18')">Show Welcome</button>
+        <button class="btn btn-success" (click)="changeCourseName()">Change Course</button>
+    </div>
+    <div class="col-4">
+        <div class="col-4">
+            <input type="text" [(ngModel)]="courseName">
+            {{courseName}}
+            <input type="checkbox" [(ngModel)]="isIndian">
+            <select [(ngModel)]="stateName">
+                <option value="">Select</option>
+                <option value="UP">UP</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Madhyapradesh">Madhyapradesh</option>
+
+                <option value="CJ">CJ</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <h2>{{firstName()}}</h2>
+        </div>
+    </div>
+</div>
