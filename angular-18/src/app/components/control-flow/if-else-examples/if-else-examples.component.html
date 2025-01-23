@@ -1,0 +1,71 @@
+<!-- Row 1: Divs -->
+<div class="row pt-3">
+    <div class="col-3 p-3">
+        @if(div1Visible){
+        <div class="p-3 text-center bg-primary">
+            <h4>Div1</h4>
+        </div>
+        }
+    </div>
+    <div class="col-3">
+        @if(isSuccessDiv2Visible){
+        <div class=" p-3 text-center bg-success">
+            <h4>Div2 success</h4>
+        </div>
+        }@else
+        {
+        <div class=" p-3 text-center bg-warning">
+            <h4>Div2 warning</h4>
+        </div>
+        }
+    </div>
+    <div class="col-3">
+        @if(num1=== num2){
+        <div class="p-3 text-center bg-warning">
+            <h4>Div3</h4>
+        </div>
+        }
+
+    </div>
+    <div class="col-3">
+        <div class="text-center  p-3 bg-danger">
+            @if(selectedStatus == 'Active'){
+            <p>Student Is Active</p>
+            }@else if(selectedStatus == 'De-Active'){
+            <p>Student Is De-Active</p>
+            }@else if(selectedStatus == 'Pending'){
+            <p>Student Pending</p>
+            }@else{
+            <p>Please select status</p>
+            }
+
+        </div>
+    </div>
+</div>
+<div class="row ">
+    <div class="col-3 text-center">
+
+        <button class="btn btn-danger" (click)="hideDiv1()">Hide</button>
+        <button class="btn btn-primary mx-2" (click)="showDiv1()">Show</button>
+
+    </div>
+    <div class="col-3 text-center">
+        <button class="btn btn-success" (click)="toggleDiv2()">Toggle</button>
+    </div>
+    <div class="col-3 ">
+        <div style="display: flex; align-items: center;">
+            <input type="text" placeholder="Enter num 1" class="form-control mb-2" [(ngModel)]="num1">
+            <input type="text" placeholder="Enter num 2" class="form-control" [(ngModel)]="num2">
+        </div>
+    </div>
+    <div class="col-3">
+        <div style="display: flex; align-items: center;">
+            <select class="form-control mt-2" [(ngModel)]="selectedStatus">
+                <option value="">Select Status</option>
+                <option value="Active">Active</option>
+                <option value="De-Active">De-Active</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </div>
+    </div>
+</div>

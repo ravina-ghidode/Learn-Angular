@@ -3,6 +3,7 @@ import { AddEmployeeComponent } from './components/add-employee/add-employee.com
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
 import { StucturalDirectiveComponent } from './directives/stuctural-directive/stuctural-directive.component';
 import { AttributeDirectiveComponent } from './directives/attribute-directive/attribute-directive.component';
+import { IfElseExamplesComponent } from './components/control-flow/if-else-examples/if-else-examples.component';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,9 @@ export const routes: Routes = [
     {
         path: 'attribute-dir',
         component: AttributeDirectiveComponent
+    },
+    {
+        path: 'if-else',
+        component: IfElseExamplesComponent
     }
 ];
