@@ -4,6 +4,7 @@ import { DataBindingComponent } from './components/data-binding/data-binding.com
 import { StucturalDirectiveComponent } from './directives/stuctural-directive/stuctural-directive.component';
 import { AttributeDirectiveComponent } from './directives/attribute-directive/attribute-directive.component';
 import { IfElseExamplesComponent } from './components/control-flow/if-else-examples/if-else-examples.component';
+import { ForSwitchComponent } from './components/control-flow/for-switch/for-switch.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +26,9 @@ export const routes: Routes = [
     {
         path: 'if-else',
         component: IfElseExamplesComponent
+    },
+    {
+        path: 'for-switch',
+        component: ForSwitchComponent
     }
 ];
