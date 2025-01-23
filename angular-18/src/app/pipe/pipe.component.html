@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-3">
+        Original Value - {{firstName}}
+        <br>
+        After Pipe- {{firstName | uppercase}}
+    </div>
+    <div class="col-3">
+        Original Value - {{firstName}}
+        <br>
+        After Pipe- {{firstName | lowercase}}
+    </div>
+    <div class="col-3">
+        Original Value - {{firstName}}
+        <br>
+        After Pipe- {{firstName | titlecase }}
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-3">
+        Original Value - {{currentDate}}
+        <br>
+        After Pipe- {{currentDate | date}}
+    </div>
+    <div class="col-3">
+        Original Value - {{currentDate | date:'dd-MM-yyyy'}}
+        <br>
+        After Pipe- {{currentDate | date:'dd-MM-yy'}}
+    </div>
+    <div class="col-3">
+        Original Value - {{currentDate | date:'dd-MMM-yyyy'}}
+        <br>
+        After Pipe- {{currentDate | date:'dd/MMM/yyyy'}}
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-3">
+        Original Value - {{student }}
+        <br>
+        After Pipe- {{student | json}}
+    </div>
+    <div class="col-3">
+        Original Value - {{currentTime }}
+        <br>
+        After Pipe- {{currentTime | async | date :'hh:mm:ss'}}
+    </div>
+    <div class="col-3">
+        Original Value - {{student.gender }}
+        <br>
+        After Pipe- {{student.gender | na}}
+    </div>
+</div>
