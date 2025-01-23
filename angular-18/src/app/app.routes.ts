@@ -6,6 +6,8 @@ import { AttributeDirectiveComponent } from './directives/attribute-directive/at
 import { IfElseExamplesComponent } from './components/control-flow/if-else-examples/if-else-examples.component';
 import { ForSwitchComponent } from './components/control-flow/for-switch/for-switch.component';
 import { PipeComponent } from './pipe/pipe.component';
+import { TemplateComponent } from './forms/template/template.component';
+import { ReactiveComponent } from './forms/reactive/reactive.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +37,14 @@ export const routes: Routes = [
     {
         path: 'pipe',
         component: PipeComponent
-    }
+    },
+    {
+        path: 'template',
+        component: TemplateComponent
+    },
+    {
+        path: 'reactive',
+        component: ReactiveComponent
+    },
+
 ];

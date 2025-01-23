@@ -1,0 +1,88 @@
+<div class="row">
+    <form #form="ngForm">
+        <div class="row pt-5">
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="studentObj.firstName" name="firstName"
+                        #fname="ngModel" required minlength="3">
+                    <div class="text-danger">
+                        @if((fname.touched || fname.dirty) && fname.errors?.['required']){
+                        <span>this is required</span>
+                        }@else if((fname.touched || fname.dirty) && fname.errors?.['minlength'])
+                        {
+                        <span>min 3 character is required</span>
+                        }
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="studentObj.lastName" name="lastName">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" [(ngModel)]="studentObj.userName" name="userName">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" [(ngModel)]="studentObj.email" name="email">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" [(ngModel)]="studentObj.password" name="password">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" [(ngModel)]="studentObj.city" name="city">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="state" class="form-label">State</label>
+                    <select [(ngModel)]="studentObj.state" name="state">
+                        <option selected disabled value="">Select any state</option>
+                        <option>MP</option>
+                        <option>UP</option>
+                        <option>Bihar</option>
+                        <option>Goa</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="zip" class="form-label">Zip</label>
+                    <input type="text" class="form-control" [(ngModel)]="studentObj.zip" required #zipCode="ngModel"
+                        name="zip">
+                    <div class="text-danger">
+                        @if((zipCode.touched || zipCode.dirty) && zipCode.errors?.['required']){
+                        <span>Zip code is required field</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <button class=" btn btn-primary" type="button" (click)="onSubmit()"
+                    [disabled]="form.invalid">Submit</button>
+                <button class="btn btn-secondary mx-2" type="button" (click)="resetForm()">Reset</button>
+            </div>
+        </div>
+    </form>
+
+</div>
