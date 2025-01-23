@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DataBindingComponent } from './components/data-binding/data-binding.component';
+import { StucturalDirectiveComponent } from './directives/stuctural-directive/stuctural-directive.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, DataBindingComponent],
+  imports: [RouterOutlet, DataBindingComponent, StucturalDirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

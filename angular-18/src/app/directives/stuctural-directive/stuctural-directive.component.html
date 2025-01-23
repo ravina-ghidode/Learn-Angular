@@ -1,0 +1,96 @@
+<!-- Row 1: Divs -->
+<div class="row pt-3">
+    <div class="col-3 p-3">
+        <div *ngIf="isDiv1Visible" class="bg-danger p-3 text-center">
+            <h4>Div1</h4>
+        </div>
+    </div>
+    <div class="col-3 p-3">
+        <div *ngIf="isDiv2Visible" class="bg-success p-3 text-center">
+            <h4>Div2</h4>
+        </div>
+    </div>
+    <div class="col-3 p-3">
+        <div class="bg-warning p-3 text-center" *ngIf="num1 == num2">
+            <h4>Div3</h4>
+        </div>
+    </div>
+    <div class="col-3 p-3">
+        <div class="bg-info p-3 text-center" *ngIf="selectedState === 'US'">
+            <h4>Div4</h4>
+        </div>
+    </div>
+</div>
+
+<!-- Row 2: Buttons and Inputs -->
+<div class="row pt-3">
+    <div class="col-3 text-center">
+        <button class="btn btn-danger" (click)="hideDiv1()">Hide</button>
+        <button class="btn btn-primary mx-2" (click)="showDiv1()">Show</button>
+    </div>
+    <div class="col-3 text-center">
+        <button class="btn btn-success" (click)="toggleDiv2()">Toggle</button>
+    </div>
+    <div class="col-3 text-center">
+        <input type="text" [(ngModel)]="num1" placeholder="Enter num 1" class="form-control mb-2">
+        <input type="text" [(ngModel)]="num2" placeholder="Enter num 2" class="form-control">
+    </div>
+    <div class="col-3 text-center">
+        <input type="checkbox" [(ngModel)]="isActive"> Active
+        <select class="form-control mt-2" [(ngModel)]="selectedState">
+            <option value="">Select State</option>
+            <option value="India">India</option>
+            <option value="US">US</option>
+        </select>
+    </div>
+</div>
+
+<!-- Row 3: Dropdown and *ngFor -->
+<div class="row pt-3">
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let city of cityArray">
+                {{ city }}
+            </li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <div *ngFor="let cityName of cityArray">{{ cityName }}</div>
+    </div>
+    <div class="col-3">
+        <select class="form-control">
+            <option *ngFor="let c of cityArray">{{ c }}</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <select>
+            <option *ngFor="let s of studentList" [value]="s.studentID">{{s.name}}</option>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-5">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stu of studentList">
+                    <td>{{stu.studentID}}</td>
+                    <td>{{stu.name}}</td>
+                    <td>{{stu.city}}</td>
+                    <td>
+                        <span *ngIf="stu.isActive">Active</span>
+                        <span *ngIf="!stu.isActive">De-Active</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
