@@ -8,6 +8,7 @@ import { ForSwitchComponent } from './components/control-flow/for-switch/for-swi
 import { PipeComponent } from './pipe/pipe.component';
 import { TemplateComponent } from './forms/template/template.component';
 import { ReactiveComponent } from './forms/reactive/reactive.component';
+import { GetApiComponent } from './apiIntregation/get-api/get-api.component';
 
 export const routes: Routes = [
     {
@@ -46,5 +47,10 @@ export const routes: Routes = [
         path: 'reactive',
         component: ReactiveComponent
     },
+    {
+        path: 'get',
+        component: GetApiComponent
+    },
+
 
 ];

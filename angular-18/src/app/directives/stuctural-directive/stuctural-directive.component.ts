@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertComponent } from '../../reusable-component/alert/alert.component';
 
 @Component({
   selector: 'app-stuctural-directive',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, AlertComponent],
   templateUrl: './stuctural-directive.component.html',
   styleUrl: './stuctural-directive.component.css'
 })

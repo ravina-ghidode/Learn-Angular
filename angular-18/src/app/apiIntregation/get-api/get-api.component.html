@@ -1,0 +1,16 @@
+<div class="row">
+    <app-alert [alertType]="'Success'" [message]="'Welcome to Get Api'"></app-alert>
+    <div class="col-2">
+        <!-- <button class="" (click)="getAllUsers()"></button> -->
+        <app-my-button [btnText]="'Get All results'" [btnClass]="'btn btn-success'"
+            (onBtnClick)="getAllUsers()"></app-my-button>
+    </div>
+    <div class="col-3">
+        <select class="form-select">
+            @for(item of userList; track $index)
+            {
+            <option>{{item.name}}</option>
+            }
+        </select>
+    </div>
+</div>

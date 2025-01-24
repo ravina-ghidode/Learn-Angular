@@ -1,6 +1,9 @@
 <button class="btn btn-primary" (click)="navigateToAttribute()">Go to Attribute</button>
 <!-- Row 1: Divs -->
 <div class="row pt-3">
+    <app-alert [alertType]="'info'" [message]="'Welcome to structural directives'"></app-alert>
+    <br>
+    <app-alert [alertType]="'Error'" [message]="'Welcome to structural directives'"></app-alert>
     <div class="col-3 p-3">
         <div *ngIf="isDiv1Visible" class="bg-danger p-3 text-center">
             <h4>Div1</h4>
