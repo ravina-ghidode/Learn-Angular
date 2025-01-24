@@ -1,1 +1,95 @@
-<p>reactive works!</p>
+<div class="row">Reactive Form
+    <form [formGroup]="studentForm">
+        <div class="row pt-5">
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" name="firstName" formControlName="firstName">
+                    <div class="text-danger">
+                        @if((studentForm.controls['firstName'].touched || studentForm.controls['firstName'].dirty ) &&
+                        studentForm.controls['firstName'].errors?.['required'])
+                        {
+                        <span>This is required field</span>
+                        }@else if(studentForm.controls['firstName'].errors?.['minlength'])
+                        {
+                        <span>Min length should be greater than 3</span>
+                        }
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" formControlName="lastName">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="userName" formControlName="userName">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" formControlName="email">
+                    <div class="text-danger">
+                        @if((studentForm.controls['email'].touched || studentForm.controls['email'].dirty ) &&
+
+                        studentForm.controls['email'].errors?.['email'])
+                        {
+                        <span>Email should be properly formatted</span>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" formControlName="password">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" name="city" formControlName="city">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="state" class="form-label">State</label>
+                    <select name="state" formControlName="state">
+                        <option selected disabled value="">Select any state</option>
+                        <option>MP</option>
+                        <option>UP</option>
+                        <option>Bihar</option>
+                        <option>Goa</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="zip" class="form-label">Zip</label>
+                    <input type="text" class="form-control" name="zip" formControlName="zip">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <button class=" btn btn-primary" type="button" (click)="onSave()"
+                    [disabled]="studentForm.invalid">Submit</button>
+                <button class="btn btn-secondary mx-2" type="button">Reset</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<div class="col-4">
+    {{formValue | json}}
+</div>
