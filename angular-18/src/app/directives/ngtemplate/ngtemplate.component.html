@@ -1,0 +1,39 @@
+<div class="row pt-3">
+
+    <div class="col-3 p-3">
+        <div class="bg-success p-3 text-center" *ngIf="isUserLoggedIn; else notLogged">
+            <h4>{{loggedUserName}}</h4>
+        </div>
+        <ng-template #notLogged>
+            <div class="bg-danger p-3 text-center">
+                <h4>User Not Logged In</h4>
+            </div>
+        </ng-template>
+
+    </div>
+    <div class="col-4">
+        <ng-template #dynamicTem>
+            <p>hii from Dynamic template</p>
+        </ng-template>
+    </div>
+    <div class="col-4">
+        <div #dynamicContainer>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Row 2: Buttons and Inputs -->
+<div class="row pt-3">
+    <div class="col-3 text-center">
+
+    </div>
+    <div class="col-3">
+
+    </div>
+    <div class="col-3">
+        <button class="btn btn-danger" (click)="loadTemplate()">Load Content</button>
+    </div>
+
+</div>

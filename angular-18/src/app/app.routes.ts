@@ -9,6 +9,7 @@ import { PipeComponent } from './pipe/pipe.component';
 import { TemplateComponent } from './forms/template/template.component';
 import { ReactiveComponent } from './forms/reactive/reactive.component';
 import { GetApiComponent } from './apiIntregation/get-api/get-api.component';
+import { NgtemplateComponent } from './directives/ngtemplate/ngtemplate.component';
 
 export const routes: Routes = [
     {
@@ -50,6 +51,10 @@ export const routes: Routes = [
     {
         path: 'get',
         component: GetApiComponent
+    },
+    {
+        path: 'ngtemplate',
+        component: NgtemplateComponent
     },
 
 
