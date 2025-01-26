@@ -11,6 +11,7 @@ import { ReactiveComponent } from './forms/reactive/reactive.component';
 import { GetApiComponent } from './apiIntregation/get-api/get-api.component';
 import { NgtemplateComponent } from './directives/ngtemplate/ngtemplate.component';
 import { NgCOntainerComponent } from './directives/ng-container/ng-container.component';
+import { ViewchildComponent } from './viewchild/viewchild.component';
 
 export const routes: Routes = [
     {
@@ -60,6 +61,10 @@ export const routes: Routes = [
     {
         path: 'ngcontainer',
         component: NgCOntainerComponent
+    },
+    {
+        path: 'viewchild',
+        component: ViewchildComponent
     },
 
 
