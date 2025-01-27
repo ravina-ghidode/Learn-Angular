@@ -10,6 +10,14 @@ import { Router, RouterOutlet } from '@angular/router';
 })
 export class LayoutComponent {
   router = inject(Router);
+  loggedUserData: any;
+  constructor() {
+    const loggedInData = localStorage.getItem('LoginUser');
+    if (loggedInData != null) {
+      this.loggedUserData = JSON.parse(loggedInData);
+    }
+
+  }
   logOut() {
     localStorage.removeItem('loginUser');
     this.router.navigateByUrl('login');
