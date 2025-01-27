@@ -15,6 +15,7 @@ import { ViewchildComponent } from './viewchild/viewchild.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { authGuard } from './components/service/auth.guard';
+import { SignalComponent } from './components/signal/signal/signal.component';
 
 export const routes: Routes = [
     //default route
@@ -83,6 +84,10 @@ export const routes: Routes = [
             {
                 path: 'viewchild',
                 component: ViewchildComponent
+            },
+            {
+                path: 'signal',
+                component: SignalComponent
             },
         ]
 
