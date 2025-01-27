@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
+import { IUser } from '../../models/interfaces/IUser';
 
 @Component({
   selector: 'app-ng-container',
@@ -11,7 +12,7 @@ import { Component, inject } from '@angular/core';
 })
 export class NgCOntainerComponent {
   isContainer: boolean = true;
-  userList: any[] = [];
+  userList: IUser[] = [];
   isApi: boolean = false
   http = inject(HttpClient);
   getUsers() {
