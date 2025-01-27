@@ -14,6 +14,7 @@ import { NgCOntainerComponent } from './directives/ng-container/ng-container.com
 import { ViewchildComponent } from './viewchild/viewchild.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { authGuard } from './components/service/auth.guard';
 
 export const routes: Routes = [
     //default route
@@ -36,7 +37,8 @@ export const routes: Routes = [
             },
             {
                 path: 'data-binding',
-                component: DataBindingComponent
+                component: DataBindingComponent,
+                canActivate: [authGuard]
             },
             {
                 path: 'structural-dir',
