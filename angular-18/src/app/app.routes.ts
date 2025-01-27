@@ -12,60 +12,80 @@ import { GetApiComponent } from './apiIntregation/get-api/get-api.component';
 import { NgtemplateComponent } from './directives/ngtemplate/ngtemplate.component';
 import { NgCOntainerComponent } from './directives/ng-container/ng-container.component';
 import { ViewchildComponent } from './viewchild/viewchild.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 export const routes: Routes = [
+    //default route
     {
-        path: 'add-employee',
-        component: AddEmployeeComponent
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
     },
     {
-        path: 'data-binding',
-        component: DataBindingComponent
+        path: 'login',
+        component: LoginComponent
     },
     {
-        path: 'structural-dir',
-        component: StucturalDirectiveComponent
+        path: '',
+        component: LayoutComponent,
+        children: [
+            {
+                path: 'add-employee',
+                component: AddEmployeeComponent
+            },
+            {
+                path: 'data-binding',
+                component: DataBindingComponent
+            },
+            {
+                path: 'structural-dir',
+                component: StucturalDirectiveComponent
+            },
+            {
+                path: 'attribute-dir',
+                component: AttributeDirectiveComponent
+            },
+            {
+                path: 'if-else',
+                component: IfElseExamplesComponent
+            },
+            {
+                path: 'for-switch',
+                component: ForSwitchComponent
+            },
+            {
+                path: 'pipe',
+                component: PipeComponent
+            },
+            {
+                path: 'template',
+                component: TemplateComponent
+            },
+            {
+                path: 'reactive',
+                component: ReactiveComponent
+            },
+            {
+                path: 'get',
+                component: GetApiComponent
+            },
+            {
+                path: 'ngtemplate',
+                component: NgtemplateComponent
+            },
+            {
+                path: 'ngcontainer',
+                component: NgCOntainerComponent
+            },
+            {
+                path: 'viewchild',
+                component: ViewchildComponent
+            },
+        ]
+
     },
-    {
-        path: 'attribute-dir',
-        component: AttributeDirectiveComponent
-    },
-    {
-        path: 'if-else',
-        component: IfElseExamplesComponent
-    },
-    {
-        path: 'for-switch',
-        component: ForSwitchComponent
-    },
-    {
-        path: 'pipe',
-        component: PipeComponent
-    },
-    {
-        path: 'template',
-        component: TemplateComponent
-    },
-    {
-        path: 'reactive',
-        component: ReactiveComponent
-    },
-    {
-        path: 'get',
-        component: GetApiComponent
-    },
-    {
-        path: 'ngtemplate',
-        component: NgtemplateComponent
-    },
-    {
-        path: 'ngcontainer',
-        component: NgCOntainerComponent
-    },
-    {
-        path: 'viewchild',
-        component: ViewchildComponent
-    },
+
 
 
 ];

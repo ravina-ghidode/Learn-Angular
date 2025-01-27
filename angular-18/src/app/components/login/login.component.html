@@ -1,0 +1,13 @@
+<div class="parent">
+    <form class="login" [formGroup]="loginForm">
+        <h2>Welcome, User!</h2>
+        <p>Please log in</p>
+        <input type="text" placeholder="User Name" formControlName="username" />
+        <input type="password" placeholder="Password" formControlName="password" />
+        <input type="submit" value="Log In" (click)="onSubmit()" />
+        <div class="links">
+            <a href="#">Forgot password</a>
+            <a href="#">Register</a>
+        </div>
+    </form>
+</div>
