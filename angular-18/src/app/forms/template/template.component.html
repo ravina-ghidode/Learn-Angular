@@ -8,10 +8,10 @@
                         #fname="ngModel" required minlength="3">
                     <div class="text-danger">
                         @if((fname.touched || fname.dirty) && fname.errors?.['required']){
-                        <span>this is required</span>
+                        <span>{{validationMessage.REQUIRED}}</span>
                         }@else if((fname.touched || fname.dirty) && fname.errors?.['minlength'])
                         {
-                        <span>min 3 character is required</span>
+                        <span>{{validationMessage.MIN_LENGTH}}</span>
                         }
                     </div>
                 </div>
