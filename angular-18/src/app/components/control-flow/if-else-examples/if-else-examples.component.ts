@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonService } from '../../service/common.service';
 
 @Component({
   selector: 'app-if-else-examples',
@@ -17,6 +18,15 @@ export class IfElseExamplesComponent {
   num1: string = "";
   num2: string = "";
   selectedStatus: string = "";
+  constructor(private common: CommonService) {
+    this.common.onRoleChange$.subscribe((res: string) => {
+
+    });
+    this.common.role$.subscribe((res: string) => {
+
+    })
+  }
+
   showDiv1() {
     this.div1Visible = true;
   }
